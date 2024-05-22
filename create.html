@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body class="d-flex flex-column align-content-center align-items-center">
+    <div class="main-title">Create Movie</div>
+    <div
+      class="main-create d-flex justify-content-center align-content-center align-items-center flex-column gap-3"
+    >
+      <div class="input-box">
+        <div class="movie-title">Title:</div>
+        <input type="text" placeholder="Title" />
+      </div>
+      <div class="input-box">
+        <div class="movie-images">Images:</div>
+        <input type="text" placeholder="Images url" />
+      </div>
+      <div class="input-box">
+        <div class="movie-total-seats">Seats:</div>
+        <input type="number" placeholder="Seats" />
+      </div>
+      <button class="create-movie-btn">Create</button>
+    </div>
+  </body>
+</html>

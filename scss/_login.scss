@@ -1,0 +1,20 @@
+.main-login {
+    height: 300px;
+    width: 300px;
+
+    .user,
+    .admin {
+        width: 90%;
+        height: 35%;
+        border: $border-light;
+        font-size: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.1s;
+
+        &:hover {
+            border: $border-dark;
+            cursor: pointer;
+        }
+    }
+}

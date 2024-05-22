@@ -1,0 +1,14 @@
+button {
+    background-color: transparent;
+    border: $border-light;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 7px 10px;
+    transition: all 0.2s;
+
+    &:hover {
+        cursor: pointer;
+        border: $border-dark;
+    }
+}

@@ -1,0 +1,30 @@
+.main-create {
+    border: $border-dark;
+    height: 70%;
+    width: 70%;
+    margin-top: 25px;
+
+    .input-box {
+        width: 40%;
+
+        input {
+            width: 100%;
+        }
+
+        @include respond(tab-land) {
+            width: 70%;
+        }
+    }
+
+    .create-movie-btn {
+        width: 30%;
+        margin-top: 5%;
+        padding: 7px 0;
+    }
+
+    @include respond(big-dekstop) {
+        width: 60%;
+    }
+
+
+}
