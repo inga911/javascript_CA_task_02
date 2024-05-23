@@ -6,7 +6,6 @@ export function appendMovie() {
   const movieCountElement = document.querySelector('.movie-count');
 
   if (!mainList) {
-    console.error('Main list element not found');
     return;
   }
 
@@ -45,7 +44,6 @@ export function appendMovie() {
         movies.splice(btnIndex, 1);
         localStorage.setItem('movies', JSON.stringify(movies));
         window.location.reload();
-        console.log('delete btn');
       };
     });
   }

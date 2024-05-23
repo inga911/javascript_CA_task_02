@@ -10,7 +10,6 @@ export function chooseUser(user) {
     if (user) {
         user.onclick = () => {
             localStorage.setItem('userType', 'user');
-            console.log('user');
             setTimeout(() => {
                 window.location = "movieList.html";
             }, 200)
@@ -22,7 +21,6 @@ export function chooseAdmin() {
     if (admin) {
         admin.onclick = () => {
             localStorage.setItem('userType', 'admin');
-            console.log('admin');
             setTimeout(() => {
                 mainLogin.classList.add('d-none')
                 adminModal.classList.remove('d-none')

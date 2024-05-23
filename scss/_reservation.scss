@@ -1,0 +1,48 @@
+.reservation-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .res-box {
+            border: $border-dark;
+            width: 20px;
+            height: 20px;
+        }
+
+
+        .available {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .selected {
+            background-color: rgb(238, 230, 144);
+        }
+
+        .reserved {
+            background-color: rgb(238, 150, 144);
+        }
+
+    }
+}
+
+.selected-border {
+    border: 3px solid greenyellow;
+}
+
+.selected {
+    background-color: rgb(238, 230, 144);
+}
+
+.reserved {
+    background-color: rgb(238, 150, 144);
+}
+
+.disable {
+    pointer-events: none;
+    cursor: default;
+}

@@ -6,7 +6,6 @@ const createMovieBtn = document.querySelector('.create-movie-btn')
 export function createMovie() {
     if (createMovieBtn) {
         createMovieBtn.onclick = () => {
-            console.log('create');
             const title = movieTitle.value;
             const url = movieURL.value;
             const seats = movieSeats.value;

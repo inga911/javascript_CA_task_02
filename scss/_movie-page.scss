@@ -10,7 +10,7 @@
 
     @include respond(tab-land) {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr;
+        grid-template-rows: 1fr 1.5fr;
     }
 
     @include respond(phone) {
@@ -21,7 +21,7 @@
     &--img {
         width: 90%;
         height: 515px;
-        border: $border-dark;
+        // border: $border-dark;
 
         @include respond(tab-land) {
             width: 80%;
@@ -68,10 +68,19 @@
             }
 
             .seats {
+
                 .seat {
                     width: 50px;
                     height: 50px;
                     border: $border-dark;
+                    text-align: center;
+                    align-content: center;
+                    user-select: none;
+
+                    &:hover {
+                        cursor: pointer;
+                        border: 2px solid rgb(47, 255, 50);
+                    }
                 }
             }
         }
@@ -80,4 +89,9 @@
             margin-top: 30px;
         }
     }
+}
+
+.available-seats {
+    text-transform: lowercase;
+    font-size: 14px;
 }

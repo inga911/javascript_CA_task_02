@@ -157,7 +157,7 @@ button:hover {
 @media only screen and (max-width: 75em) {
   .main-single-page {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 1.5fr;
   }
 }
 @media only screen and (max-width: 37.5em) {
@@ -169,7 +169,6 @@ button:hover {
 .main-single-page--img {
   width: 90%;
   height: 515px;
-  border: 1px solid rgba(1, 1, 1, 0.518);
 }
 @media only screen and (max-width: 75em) {
   .main-single-page--img {
@@ -217,9 +216,65 @@ button:hover {
   width: 50px;
   height: 50px;
   border: 1px solid rgba(1, 1, 1, 0.518);
+  text-align: center;
+  align-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.main-single-page--left-side__select-seats .seats .seat:hover {
+  cursor: pointer;
+  border: 2px solid rgb(47, 255, 50);
 }
 .main-single-page--left-side .buttons {
   margin-top: 30px;
+}
+
+.available-seats {
+  text-transform: lowercase;
+  font-size: 14px;
+}
+
+.reservation-info {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+.reservation-info div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.reservation-info div .res-box {
+  border: 1px solid rgba(1, 1, 1, 0.518);
+  width: 20px;
+  height: 20px;
+}
+.reservation-info div .available {
+  background-color: rgb(255, 255, 255);
+}
+.reservation-info div .selected {
+  background-color: rgb(238, 230, 144);
+}
+.reservation-info div .reserved {
+  background-color: rgb(238, 150, 144);
+}
+
+.selected-border {
+  border: 3px solid greenyellow;
+}
+
+.selected {
+  background-color: rgb(238, 230, 144);
+}
+
+.reserved {
+  background-color: rgb(238, 150, 144);
+}
+
+.disable {
+  pointer-events: none;
+  cursor: default;
 }
 
 body {

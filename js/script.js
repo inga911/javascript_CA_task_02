@@ -1,7 +1,8 @@
 import { chooseUser, chooseAdmin, user, admin, userType } from "./login.js";
 import { createMovie } from "./create.js";
 import { appendMovie } from './movieList.js';
-import { loadMovieDetails } from './movieDetails.js';
+import { appendMovieDetails } from './movie-details/movieDetails.js';
+import { toReserveSeats } from "./movie-details/toReserveSeats.js";
 
 function createToolbarLinks() {
     const toolBar = document.querySelector('.toolbar');
@@ -50,5 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     chooseAdmin(admin);
     createMovie();
     appendMovie();
-    loadMovieDetails();
+    appendMovieDetails();
+    toReserveSeats()
 });
