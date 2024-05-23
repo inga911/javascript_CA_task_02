@@ -13,24 +13,25 @@
     />
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script type="module" src="script.js" defer></script>
+    <script type="module" src="./js/script.js" defer></script>
   </head>
   <body class="d-flex flex-column align-content-center align-items-center">
+    <div class="toolbar"></div>
     <div class="main-title">Create Movie</div>
     <div
       class="main-create d-flex justify-content-center align-content-center align-items-center flex-column gap-3"
     >
       <div class="input-box">
         <div class="movie-title">Title:</div>
-        <input type="text" placeholder="Title" />
+        <input type="text" placeholder="Title" id="movieTitle" />
       </div>
       <div class="input-box">
         <div class="movie-images">Images:</div>
-        <input type="text" placeholder="Images url" />
+        <input type="text" placeholder="Images url" id="movieURL" />
       </div>
       <div class="input-box">
         <div class="movie-total-seats">Seats:</div>
-        <input type="number" placeholder="Seats" />
+        <input type="number" placeholder="Seats" id="movieSeats" />
       </div>
       <button class="create-movie-btn">Create</button>
     </div>

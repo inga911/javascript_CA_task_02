@@ -13,77 +13,16 @@
     />
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script type="module" src="script.js" defer></script>
+    <script type="module" src="./js/script.js" defer></script>
   </head>
   <body>
-    <div class="main-title">Movie List (5)</div>
-    <div
-      class="main-list d-flex justify-content-center align-content-center align-items-center flex-wrap gap-5"
-    >
-      <div class="movie-box">
-        <div class="movie-box--img">
-          <img src="" alt="" />
-        </div>
-        <div class="movie-box--details">
-          <div class="movie-title">Movie title</div>
-
-          <div class="movie-title">Seats 50/50</div>
-
-          <button class="movie-box--delete-btn">Delete (if admin)</button>
-        </div>
-      </div>
-
-      <div class="movie-box">
-        <div class="movie-box--img">
-          <img src="" alt="" />
-        </div>
-        <div class="movie-box--details">
-          <div class="movie-title">Movie title</div>
-
-          <div class="movie-title">Seats 50/50</div>
-
-          <button class="movie-box--delete-btn">Delete (if admin)</button>
-        </div>
-      </div>
-
-      <div class="movie-box">
-        <div class="movie-box--img">
-          <img src="" alt="" />
-        </div>
-        <div class="movie-box--details">
-          <div class="movie-box--details__title">Movie title</div>
-
-          <div class="movie-box--details__title">Seats 50/50</div>
-
-          <button class="movie-box--delete-btn">Delete (if admin)</button>
-        </div>
-      </div>
-
-      <div class="movie-box">
-        <div class="movie-box--img">
-          <img src="" alt="" />
-        </div>
-        <div class="movie-box--details">
-          <div class="movie-box--details__title">Movie title</div>
-
-          <div class="movie-box--details__title">Seats 50/50</div>
-
-          <button class="movie-box--delete-btn">Delete (if admin)</button>
-        </div>
-      </div>
-
-      <div class="movie-box">
-        <div class="movie-box--img">
-          <img src="" alt="" />
-        </div>
-        <div class="movie-box--details">
-          <div class="movie-box--details__title">Movie title</div>
-
-          <div class="movie-box--details__title">Seats 50/50</div>
-
-          <button class="movie-box--delete-btn">Delete (if admin)</button>
-        </div>
-      </div>
+    <div class="toolbar"></div>
+    <div class="main-title">
+      Movie List <span class="movie-count">(0)</span>
     </div>
+    <div
+      id="mainList"
+      class="main-list d-flex justify-content-center align-content-center align-items-center flex-wrap gap-5"
+    ></div>
   </body>
 </html>

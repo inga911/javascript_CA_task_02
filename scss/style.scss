@@ -18,3 +18,32 @@ body {
     font-size: 25px;
     margin-top: 25px;
 }
+
+.d-none {
+    display: none;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 0 auto;
+
+    .toolbar-link {
+        text-decoration: none;
+        color: grey;
+        text-transform: uppercase;
+
+        &:hover {
+            cursor: pointer;
+            color: black;
+        }
+    }
+}
+
+.current-user {
+    color: rgb(250, 57, 89) !important;
+    position: absolute;
+    right: 5%;
+    top: 0;
+}
