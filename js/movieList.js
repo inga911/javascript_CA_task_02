@@ -62,6 +62,11 @@ export function appendMovie() {
         closeModalYes.onclick = () => {
           movies.splice(btnIndex, 1);
           localStorage.setItem('movies', JSON.stringify(movies));
+          //delete reserved seats from localStorage if movie was removed
+          const reservedSeatsData = JSON.parse(localStorage.getItem('reservedSeatsData')) || {};
+          delete reservedSeatsData[movie.title];
+          localStorage.setItem('reservedSeatsData', JSON.stringify(reservedSeatsData));
+
           modal.close();
           window.location.reload();
         };

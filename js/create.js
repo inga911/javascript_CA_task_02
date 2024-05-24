@@ -5,6 +5,7 @@ const movieURL = document.getElementById('movieURL')
 const movieSeats = document.getElementById('movieSeats')
 const createMovieBtn = document.querySelector('.create-movie-btn')
 const closeModalYes = document.getElementById('closeModalYes')
+const charCountDisplay = document.querySelector('.char-count');
 
 
 function isValidSeats(seats) {
@@ -14,7 +15,12 @@ function isValidSeats(seats) {
 function isValidImageUrl(url) {
     return (url.startsWith('http://') || url.startsWith('https://'));
 }
-
+if (movieTitle && charCountDisplay) {
+    movieTitle.addEventListener('input', () => {
+        const currentLength = movieTitle.value.length;
+        charCountDisplay.textContent = `${currentLength}/100`;
+    });
+}
 export function createMovie() {
     if (createMovieBtn) {
         createMovieBtn.onclick = () => {
@@ -38,7 +44,11 @@ export function createMovie() {
                     return
                 }
                 const movies = JSON.parse(localStorage.getItem('movies')) || [];
-
+                const movieExists = movies.some(movie => movie.title === title);
+                if (movieExists) {
+                    innerModalTxt('Info', `A movie with the title "${title}" already exists. Please choose a different title.`);
+                    return;
+                }
                 const movie = {
                     title,
                     url,

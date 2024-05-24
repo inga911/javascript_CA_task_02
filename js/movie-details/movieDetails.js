@@ -3,15 +3,12 @@ import { appendSeats } from "../movie-details/appendSeats.js";
 
 export function appendMovieDetails() {
   const singlePage = document.getElementById('singlePage');
-
-  if (!singlePage) {
-    return;
-  }
-
-
   const currentMovie = JSON.parse(localStorage.getItem('currentMovie'));
   const movieTitle = currentMovie.title;
   const movieSeats = currentMovie.seats
+  if (!singlePage) {
+    return;
+  }
 
   const mainSinglePage = document.createElement('div');
   mainSinglePage.className = 'main-single-page';
