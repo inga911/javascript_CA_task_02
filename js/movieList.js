@@ -1,4 +1,5 @@
 import { userType } from "./login.js";
+import { getAvailableSeats } from "./movie-details/appendSeats.js";
 
 export function appendMovie() {
   const movies = JSON.parse(localStorage.getItem('movies')) || [];
@@ -22,20 +23,28 @@ export function appendMovie() {
           </div>
           <div class="movie-box--details">
             <div class="movie-title"><span class="title">${movie.title}</span></div>
-            <div class="movie-title">Seats <span class="seats">${movie.seats}</span></div>
+            <div class="movie-title">Seats <span class="seats"></span></div>
             ${userType === 'admin' ? `<button class="movie-box--delete-btn" data-index="${index}">Delete</button>` : ''}
           </div>
         `;
 
+    //after clicking the image redirects to one page of the movie
     const movieImgBox = movieBox.querySelector('.movie-box--img')
     movieImgBox.addEventListener('click', () => {
       localStorage.setItem('currentMovie', JSON.stringify(movie));
       window.location.href = 'moviePage.html';
     });
+    //Available and total seats
+    const reservedSeatsData = JSON.parse(localStorage.getItem('reservedSeatsData')) || {};
+    const seats = movieBox.querySelector('.seats')
+    const reservedSeats = reservedSeatsData[movie.title] || [];
+    seats.innerHTML = ``
+    getAvailableSeats(seats, reservedSeats, movie.seats)
 
     mainList.appendChild(movieBox);
   });
 
+  //If user is ADMIN show delete button and let delete movie
   if (userType === 'admin') {
     const deleteBtns = document.querySelectorAll('.movie-box--delete-btn');
     deleteBtns.forEach(btn => {
@@ -48,3 +57,4 @@ export function appendMovie() {
     });
   }
 }
+

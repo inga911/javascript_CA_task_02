@@ -7,9 +7,7 @@ const seatsToCancel = document.querySelector('.seatsToCancel')
 const closeModal = document.querySelector('.closeModal')
 
 
-
 export function appendSeats(seats, movieTitle, movieSeats) {
-
     const seatContainer = document.getElementById('seatContainer');
     for (let i = 0; i < seats; i++) {
         const seat = document.createElement('div');
@@ -23,14 +21,7 @@ export function appendSeats(seats, movieTitle, movieSeats) {
     // Saving to localStorage and display as reserved
     const reservedSeatsData = JSON.parse(localStorage.getItem('reservedSeatsData')) || {};
     const reservedSeats = reservedSeatsData[movieTitle] || [];
-    //Count avaiable  seats and display it
-    const count = reservedSeats.length;
-    const available = movieSeats - count
-    if (availableSeats) {
-        availableSeats.innerHTML = `(${available} of ${movieSeats} available seats)`;
-    } else {
-        console.error('Available seats element not found');
-    }
+    getAvailableSeats(availableSeats, reservedSeats, movieSeats)
 
     reservedSeats.forEach(seatId => {
         const seat = document.getElementById(seatId);
@@ -70,5 +61,13 @@ export function appendSeats(seats, movieTitle, movieSeats) {
 if (closeModal) {
     closeModal.onclick = () => {
         modalCancel.close()
+    }
+}
+
+export function getAvailableSeats(freeSeat, booked, totalSeat) {
+    const count = booked.length;
+    const available = totalSeat - count
+    if (freeSeat) {
+        freeSeat.innerHTML = `(${available} of ${totalSeat} available seats)`;
     }
 }
