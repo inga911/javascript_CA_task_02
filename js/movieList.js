@@ -1,5 +1,12 @@
 import { userType } from "./login.js";
+import { innerModalTxt } from "./modal.js";
 import { getAvailableSeats } from "./movie-details/appendSeats.js";
+
+
+const modal = document.getElementById('modal')
+const closeModalYes = document.getElementById('closeModalYes')
+const closeModalNo = document.querySelector('.closeModalNo')
+
 
 export function appendMovie() {
   const movies = JSON.parse(localStorage.getItem('movies')) || [];
@@ -46,13 +53,21 @@ export function appendMovie() {
 
   //If user is ADMIN show delete button and let delete movie
   if (userType === 'admin') {
-    const deleteBtns = document.querySelectorAll('.movie-box--delete-btn');
+    const deleteBtns = document.querySelectorAll('.movie-box--details__delete-btn');
     deleteBtns.forEach(btn => {
       btn.onclick = () => {
         const btnIndex = btn.getAttribute('data-index');
-        movies.splice(btnIndex, 1);
-        localStorage.setItem('movies', JSON.stringify(movies));
-        window.location.reload();
+        const movie = movies[btnIndex];
+        innerModalTxt('Delete movie', `Are you sure you want to delete of <b>${movie.title}</b>?`)
+        closeModalYes.onclick = () => {
+          movies.splice(btnIndex, 1);
+          localStorage.setItem('movies', JSON.stringify(movies));
+          modal.close();
+          window.location.reload();
+        };
+        closeModalNo.onclick = () => {
+          modal.close();
+        };
       };
     });
   }

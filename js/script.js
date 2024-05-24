@@ -7,7 +7,6 @@ import { toReserveSeats } from "./movie-details/toReserveSeats.js";
 function createToolbarLinks() {
     const toolBar = document.querySelector('.toolbar');
     if (!toolBar) {
-        console.error('Toolbar element not found');
         return;
     }
 

@@ -85,20 +85,24 @@ button:hover {
 }
 
 .main-create {
-  border: 1px solid rgba(1, 1, 1, 0.518);
   height: 70%;
-  width: 70%;
+  width: 55%;
   margin-top: 25px;
+  border: 1px solid rgba(255, 254, 254, 0.272);
+  padding: 25px;
 }
-.main-create .input-box {
-  width: 40%;
+.main-create .form {
+  width: 80%;
+}
+.main-create .form .input-box {
+  width: 100%;
   color: rgb(191, 202, 220);
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
   padding: 10px;
 }
-.main-create .input-box input {
+.main-create .form .input-box input {
   width: 100%;
   line-height: 2;
   font-size: 16px;
@@ -109,11 +113,6 @@ button:hover {
   margin-top: 7px;
   color: white;
   outline: none;
-}
-@media only screen and (max-width: 75em) {
-  .main-create .input-box {
-    width: 70%;
-  }
 }
 .main-create .create-movie-btn {
   width: 30%;
@@ -400,18 +399,20 @@ body {
 
 dialog {
   height: 250px;
+  width: 400px;
   padding: 40px;
   border-radius: 5px;
   box-shadow: 1px 0px 20px 7px rgba(96, 125, 139, 0.9607843137);
   border: none;
+  text-align: center;
 }
 dialog .modal-title {
-  text-align: center;
   text-transform: uppercase;
   font-size: 27px;
   letter-spacing: 3px;
+  margin-bottom: 20px;
 }
-dialog .seatsToCancel {
+dialog .modal-description {
   font-size: 16px;
   width: 80%;
   text-align: center;
@@ -420,6 +421,7 @@ dialog .seatsToCancel {
 dialog .modal-buttons {
   display: flex;
   justify-content: space-around;
+  margin-top: 15px;
 }
 dialog .modal-buttons button {
   border-radius: 3px;

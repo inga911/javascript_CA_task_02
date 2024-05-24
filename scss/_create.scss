@@ -1,32 +1,33 @@
 .main-create {
-    border: $border-dark;
     height: 70%;
-    width: 70%;
+    width: 55%;
     margin-top: 25px;
+    border: $border-white;
+    padding: 25px;
 
-    .input-box {
-        width: 40%;
-        color: $color-main-light;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 1px;
-        padding: 10px;
+    .form {
+        width: 80%;
 
-        input {
+        .input-box {
             width: 100%;
-            line-height: 2;
-            font-size: 16px;
-            padding: 0px 7px;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #ffffff8a;
-            margin-top: 7px;
-            color: white;
-            outline: none;
-        }
+            color: $color-main-light;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 10px;
 
-        @include respond(tab-land) {
-            width: 70%;
+            input {
+                width: 100%;
+                line-height: 2;
+                font-size: 16px;
+                padding: 0px 7px;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid #ffffff8a;
+                margin-top: 7px;
+                color: white;
+                outline: none;
+            }
         }
     }
 

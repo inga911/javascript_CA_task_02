@@ -1,10 +1,10 @@
 import { selectSeat } from "./selectSeat.js";
 import { userType } from "../login.js";
+import { innerModalTxt } from "../modal.js";
 
-const modalCancel = document.getElementById('modalCancel')
-const closeModalCancel = document.getElementById('closeModalCancel')
-const seatsToCancel = document.querySelector('.seatsToCancel')
-const closeModal = document.querySelector('.closeModal')
+const modal = document.getElementById('modal')
+const closeModalYes = document.getElementById('closeModalYes')
+const closeModalNo = document.querySelector('.closeModalNo')
 
 
 export function appendSeats(seats, movieTitle, movieSeats) {
@@ -33,10 +33,10 @@ export function appendSeats(seats, movieTitle, movieSeats) {
                 if (seat.classList.contains('reserved')) {
                     seat.classList.remove('disable');
                     seat.onclick = () => {
-                        modalCancel.showModal();
-                        seatsToCancel.innerHTML = `Are you sure you want to cancel reservation of <b>${seat.textContent}</b> seat?`
+                        innerModalTxt(`Seats cancelation`, `Are you sure you want to cancel reservation of <b>${seat.textContent}</b> seat?`)
+
                         //Closing modal with confirmation of canceling and removing that seat from localStorage
-                        closeModalCancel.onclick = () => {
+                        closeModalYes.onclick = () => {
                             const index = reservedSeats.indexOf(seatId);
                             //If seat exist in reservedSeats, remove it from here
                             if (index > -1) {
@@ -49,7 +49,7 @@ export function appendSeats(seats, movieTitle, movieSeats) {
                                 seat.onclick = null;
                                 location.reload()
                             }
-                            modalCancel.close()
+                            modal.close()
                         }
                     }
                 }
@@ -58,9 +58,9 @@ export function appendSeats(seats, movieTitle, movieSeats) {
     });
 }
 //Close modal if do not want to cancel reservation
-if (closeModal) {
-    closeModal.onclick = () => {
-        modalCancel.close()
+if (closeModalNo) {
+    closeModalNo.onclick = () => {
+        modal.close()
     }
 }
 

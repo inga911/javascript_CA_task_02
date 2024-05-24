@@ -25,19 +25,34 @@
     <div
       class="main-create d-flex justify-content-center align-content-center align-items-center flex-column gap-3"
     >
-      <div class="input-box">
-        <div class="movie-title">Title:</div>
-        <input type="text" placeholder="Title" id="movieTitle" />
-      </div>
-      <div class="input-box">
-        <div class="movie-images">Images:</div>
-        <input type="text" placeholder="Images url" id="movieURL" />
-      </div>
-      <div class="input-box">
-        <div class="movie-total-seats">Seats:</div>
-        <input type="number" placeholder="Seats" id="movieSeats" />
+      <div class="form">
+        <div class="input-box">
+          <div class="movie-title">Title:</div>
+          <input type="text" placeholder="Title" id="movieTitle" />
+        </div>
+        <div class="input-box">
+          <div class="movie-images">Images:</div>
+          <input type="text" placeholder="Images url" id="movieURL" />
+        </div>
+        <div class="input-box">
+          <div class="movie-total-seats">Seats:</div>
+          <input
+            type="number"
+            placeholder="Seats"
+            id="movieSeats"
+            min="1"
+            max="100"
+          />
+        </div>
       </div>
       <button class="create-movie-btn">Create</button>
     </div>
+    <dialog id="modal">
+      <div class="modal-title"></div>
+      <div class="modal-description"></div>
+      <div class="modal-buttons">
+        <button class="yes-btn" id="closeModalYes">Ok</button>
+      </div>
+    </dialog>
   </body>
 </html>
