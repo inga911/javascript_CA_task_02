@@ -25,7 +25,7 @@ export function appendMovieDetails() {
         <div>selected <div class="res-box selected"></div></div>
         <div>reserved <div class="res-box reserved"></div></div>
       </div>
-      <div>${userType === 'admin' ? '*Click on reserved seat if want to cancel reservation' : ''}</div>
+      <div class="cancel-info">${userType === 'admin' ? '*Click on reserved seat if want to cancel reservation' : ''}</div>
       <div class="buttons">
         <button class="reservation">Reserve Seat</button>
        

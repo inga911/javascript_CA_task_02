@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-evenly;
     margin-top: 15px;
+    color: $color-main-light;
 
     div {
         display: flex;
@@ -20,29 +21,40 @@
         }
 
         .selected {
-            background-color: rgb(238, 230, 144);
+            background-color: rgb(233 213 0);
         }
 
         .reserved {
-            background-color: rgb(238, 150, 144);
+            background-color: rgb(178 52 52);
         }
 
     }
 }
 
-.selected-border {
-    border: 3px solid greenyellow;
-}
 
 .selected {
-    background-color: rgb(238, 230, 144);
+    background-color: rgb(233 213 0);
 }
 
 .reserved {
-    background-color: rgb(238, 150, 144);
+    background-color: rgb(178 52 52);
 }
 
 .disable {
     pointer-events: none;
     cursor: default;
+}
+
+.cancel-info {
+    color: $color-main-light;
+    margin-top: 20px;
+}
+
+.reservation {
+    color: $color-main-light;
+
+    &:hover {
+        border: $border-white;
+        color: white;
+    }
 }

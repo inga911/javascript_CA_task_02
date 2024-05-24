@@ -21,7 +21,6 @@
     &--img {
         width: 90%;
         height: 515px;
-        // border: $border-dark;
 
         @include respond(tab-land) {
             width: 80%;
@@ -30,8 +29,8 @@
         }
 
         @include respond(phone) {
-            width: 100%;
-            height: 300px;
+            width: 70%;
+            height: 100%;
             margin: 0 auto;
         }
 
@@ -43,43 +42,57 @@
     }
 
     &--left-side {
+        background: #000a455c;
+        padding: 25px;
 
         &__title {
             font-size: 30px;
             text-transform: uppercase;
             font-weight: 600;
             width: 100%;
+            color: $color-main-purple;
 
             @include respond(tab-land) {
                 text-align: center;
             }
+
+            .available-seats {
+                text-transform: lowercase;
+                font-size: 14px;
+                color: $color-main-light;
+            }
         }
 
         &__select-seats {
-            height: 405px;
-            border: $border-dark;
-            padding: 10px;
+            min-height: 405px;
+            margin-top: 25px;
+            border: $border-white;
+            padding: 0 10px 10px 10px;
 
             .screen {
                 width: 80%;
                 text-align: center;
                 margin: 0px auto 30px auto;
-                border: $border-dark;
+                background-color: white;
+                border-radius: 0 0 25px 25px;
+                box-shadow: 0px 5px 20px 7px #b7d1fa;
             }
 
             .seats {
+                margin-top: 50px;
 
                 .seat {
                     width: 50px;
                     height: 50px;
-                    border: $border-dark;
+                    border: $border-white;
                     text-align: center;
                     align-content: center;
                     user-select: none;
+                    color: white;
 
                     &:hover {
                         cursor: pointer;
-                        border: 2px solid rgb(47, 255, 50);
+                        border: 2px solid rgb(47, 252, 255);
                     }
                 }
             }
@@ -89,9 +102,4 @@
             margin-top: 30px;
         }
     }
-}
-
-.available-seats {
-    text-transform: lowercase;
-    font-size: 14px;
 }

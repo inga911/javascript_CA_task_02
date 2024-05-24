@@ -11,6 +11,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script type="module" src="./js/script.js" defer></script>
@@ -18,10 +22,12 @@
   <body id="singlePage">
     <div class="toolbar"></div>
     <dialog id="modalCancel">
-      <div>Seats cancelation</div>
+      <div class="modal-title">Seats cancelation</div>
       <div class="seatsToCancel"></div>
-      <button id="closeModalCancel">Yes</button>
-      <button class="closeModal">No</button>
+      <div class="modal-buttons">
+        <button class="yes-btn" id="closeModalCancel">Yes</button>
+        <button class="closeModal no-btn">No</button>
+      </div>
     </dialog>
   </body>
 </html>

@@ -24,7 +24,7 @@ export function appendMovie() {
           <div class="movie-box--details">
             <div class="movie-title"><span class="title">${movie.title}</span></div>
             <div class="movie-title">Seats <span class="seats"></span></div>
-            ${userType === 'admin' ? `<button class="movie-box--delete-btn" data-index="${index}">Delete</button>` : ''}
+            ${userType === 'admin' ? `<button class="movie-box--details__delete-btn" data-index="${index}">Delete</button>` : ''}
           </div>
         `;
 

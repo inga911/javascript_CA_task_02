@@ -34,7 +34,7 @@ export function appendSeats(seats, movieTitle, movieSeats) {
                     seat.classList.remove('disable');
                     seat.onclick = () => {
                         modalCancel.showModal();
-                        seatsToCancel.innerHTML = `Are you sure you want to cancel reservation of ${seat.textContent} seat?`
+                        seatsToCancel.innerHTML = `Are you sure you want to cancel reservation of <b>${seat.textContent}</b> seat?`
                         //Closing modal with confirmation of canceling and removing that seat from localStorage
                         closeModalCancel.onclick = () => {
                             const index = reservedSeats.indexOf(seatId);

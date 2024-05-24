@@ -12,12 +12,12 @@ function createToolbarLinks() {
     }
 
     const goToMovieList = document.createElement('a');
-    goToMovieList.className = 'toolbar-link'
+    goToMovieList.className = 'toolbar-link list'
     goToMovieList.href = 'movieList.html';
-    goToMovieList.innerHTML = 'Go to movie list';
+    goToMovieList.innerHTML = 'Movie list';
 
     const logoutDiv = document.createElement('div');
-    logoutDiv.className = 'toolbar-link'
+    logoutDiv.className = 'toolbar-link current-user'
     logoutDiv.innerHTML = 'Log out';
     logoutDiv.onclick = () => {
         localStorage.removeItem('userType');
@@ -27,8 +27,8 @@ function createToolbarLinks() {
 
     const createNewMovie = document.createElement('div');
     if (userType === 'admin') {
-        createNewMovie.className = 'toolbar-link'
-        createNewMovie.innerHTML = 'Create new movie';
+        createNewMovie.className = 'toolbar-link new'
+        createNewMovie.innerHTML = '<span class="material-symbols-outlined">add</span> new movie';
         createNewMovie.onclick = () => {
             window.location = "create.html"
         }
@@ -36,7 +36,7 @@ function createToolbarLinks() {
 
     const currentUser = document.createElement('div');
     currentUser.className = 'current-user'
-    currentUser.innerHTML = `${userType === 'user' ? 'Now  logged in as  USER' : 'Now logged in as ADMIN'}`;
+    currentUser.innerHTML = `${userType === 'user' ? '<span class="material-symbols-outlined"> person</span>  USER' : '<span class="material-symbols-outlined"> person</span> ADMIN'}`;
 
 
     toolBar.appendChild(goToMovieList);

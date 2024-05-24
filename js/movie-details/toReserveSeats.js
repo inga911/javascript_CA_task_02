@@ -5,9 +5,11 @@ export function toReserveSeats() {
     const reservationBtn = document.querySelector('.reservation');
     if (reservationBtn) {
         reservationBtn.onclick = () => {
-            //Get seats selected by the user
-            let userSelectedSeats = JSON.parse(localStorage.getItem('userSelectedSeats')) || [];
-
+            const selectedSeats = document.querySelectorAll('.seat.selected');
+            let userSelectedSeats = [];
+            selectedSeats.forEach(seat => {
+                userSelectedSeats.push(seat.id);
+            });
             const currentMovie = JSON.parse(localStorage.getItem('currentMovie'));
             const movieTitle = currentMovie.title;
             // Get reserved seats data of all movies
